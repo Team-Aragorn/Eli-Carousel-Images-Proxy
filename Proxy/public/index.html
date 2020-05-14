@@ -3,17 +3,40 @@
   <head>
     <title>Better Game Start</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href='http://localhost:3003/games/:gameId/styles.css'>
     <link rel="stylesheet" type="text/css" href='http://localhost:3005/styles.css'>
-    <link rel="stylesheet" type="text/css" href='http://localhost:3003/styles.css'
+    <link rel="stylesheet" type="text/css" href='http://localhost:3001/games/:gameId/app.css'>
+    <link rel="stylesheet" type="text/css" href='http://localhost:3004/games/:gameId/styles.css'>
   </head>
   <body>
-    <div id="imageCarousel"></div>
-    <div id="recommended"></div>
-    <div id="reviews"></div>
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <script src='http://localhost:3003/bundle.js'></script>
-    <script src='http://localhost:3002/games/1/bundle.js'></script>
-    <script src='http://localhost:3005/bundle.js'></script>
+    <div id="app">
+      <h1 id="mainTitle">BetterGame<span id="red">Start</span></h1>
+      <div id="selectionBar">
+        <div></div>
+        <h4 class="mid">VIDEO GAMES</h4>
+        <h4 class="mid">ACCESSORIES</h4>
+        <h4 class="mid">COLLECTIBLES</h4>
+        <h4 class="mid">ELECTRONICS</h4>
+        <h4 class="mid">CLOTHING</h4>
+        <h4 class="mid">DEALS</h4>
+        <h4 class="mid">WEEKLY AD</h4>
+        <h4 class="mid">GIFT CARDS</h4>
+        <div></div>
+      </div>
+      <div id="top">
+        <div id="carousel"></div>
+        <div id="addToCart"></div>
+      </div>
+      <div id="grey">
+        <div id='game-details'></div>
+        <div id="recommended"></div>
+      </div>
+      <div id="reviews"></div>
+      <script src='http://localhost:3001/games/:gameId/bundle.js'></script>
+      <script src='http://localhost:3002/games/:gameId/app.js'></script>
+      <script src='http://localhost:3003/games/:gameId/bundle.js'></script>
+      <script src='http://localhost:3004/games/:gameId/bundle.js'></script>
+      <script src='http://localhost:3005/bundle.js'></script>
+  </div>
   </body>
 </html>

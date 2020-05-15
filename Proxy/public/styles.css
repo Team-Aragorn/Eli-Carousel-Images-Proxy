@@ -1,3 +1,7 @@
+html, body {
+  margin: 0;
+ }
+
 #app {
   font-family: Montserrat,sans-serif;
 }
@@ -22,13 +26,33 @@
   0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.19);
 }
 
+#foot {
+  background-color: black;
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto repeat(8, 10%) auto;
+}
+
+.bot {
+  align-self: center;
+  justify-self: center;
+  color: white;
+  font-weight: 250;
+}
+
+.bot:hover {
+  border-bottom: 1px solid white;
+}
+
 .mid {
   align-self: center;
   justify-self: center;
+  border-bottom: 3px solid rgba(255, 255, 255, 0);
 }
 
 .mid:hover {
-  color: #DA3625;
+  /* color: #DA3625; */
+  border-bottom: 3px solid #DA3625;
 }
 
 #grey {

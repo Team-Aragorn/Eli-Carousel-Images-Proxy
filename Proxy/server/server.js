@@ -7,12 +7,14 @@ const PORT = 3100;
 app.use('/games/:gameId', express.static(`${__dirname}/../public`));
 app.use(express.json());
 
+console.log(`${__dirname}/../public`);
+
 
 app.get('/carousel/:gameId', (req, res) => {
-  axios.get('/carousel/:gameId', {
-    baseURL: 'http://localhost:3003'
+  axios({
+    baseURL: `http://localhost:3003/carousel/${req.params.gameId}`
   })
-    .then((data) => { console.log(data), res.status(200).send(data.data); })
+    .then((data) => { res.status(200).send(data.data); })
     .catch(() => { res.status(404).end(); });
 });
 
@@ -29,6 +31,16 @@ app.get('/reviews/:gameId', (req, res) => {
     baseURL: `http://localhost:3002/reviews/${req.params.gameId}`
   })
     .then((data) => { res.status(200).send(data.data); })
+    .catch(() => { res.status(404).end(); });
+});
+
+app.post('/reviews/:gameId', (req, res) => {
+  axios({
+    method: 'post',
+    baseURL: `http://localhost:3002/reviews/${req.params.gameId}`,
+    data: req.body,
+  })
+    .then(() => { res.status(200).send(); })
     .catch(() => { res.status(404).end(); });
 });
 

@@ -28,7 +28,7 @@ app.get('/recommended', (req, res) => {
 
 app.get('/reviews/:gameId', (req, res) => {
   axios({
-    baseURL: `http://3.22.26.129:3002/reviews/${req.params.gameId}`
+    baseURL: `http://3.22.26.129/reviews/${req.params.gameId}`
   })
     .then((data) => { res.status(200).send(data.data); })
     .catch(() => { res.status(404).end(); });
@@ -37,7 +37,7 @@ app.get('/reviews/:gameId', (req, res) => {
 app.post('/reviews/:gameId', (req, res) => {
   axios({
     method: 'post',
-    baseURL: `http://3.22.26.129:3002/reviews/${req.params.gameId}`,
+    baseURL: `http://3.22.26.129/reviews/${req.params.gameId}`,
     data: req.body,
   })
     .then(() => { res.status(200).send(); })
